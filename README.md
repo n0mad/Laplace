@@ -13,7 +13,7 @@ Laplace approximation is a useful trick that bridges the loss-function-optimizat
 [6 Thompson Sampling]() [To be added] Thompson sampling is an elegant explore/exploit strategy that works by sampling from the posterior.  Laplace approximation allows us to approximate the posterior in cases where it's hard to do it other way.
 
 
-#References
+# References
 
 [Pattern Recognition and Machine Learning, Bishop, C.M.; S4.4](https://www.microsoft.com/en-us/research/people/cmbishop/)
 
