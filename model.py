@@ -4,7 +4,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 
 
 class LaplacedModel:
-    def __init__(self, batch_size, initial_reg_param, l, ewc):
+    def __init__(self, batch_size, ewc):
         input_dim = 784
         output_dim = 10
         hidden_dim = 50
@@ -33,7 +33,7 @@ class LaplacedModel:
             self.prediction_cost = tf.reduce_sum(tf.nn.softmax_cross_entropy_with_logits(labels=self.y_, logits=self.y))
             self.cost = self.prediction_cost
             for v, prev_v, fisher in zip(self.variables, self.prev_solution_placeholders, self.fisher_placeholders):
-                self.cost = self.cost + tf.reduce_sum(tf.square(v - prev_v) * fisher) * l * 0.5
+                self.cost = self.cost + tf.reduce_sum(tf.square(v - prev_v) * fisher) * 0.5
 
             is_correct = tf.equal(tf.argmax(self.y, 1), tf.argmax(self.y_, 1))
             self.accuracy = tf.reduce_mean(tf.cast(is_correct, tf.float32))
@@ -122,12 +122,12 @@ if __name__ == '__main__':
     mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
     sequential_tasks = 5
 
-    model_laplaced = LaplacedModel(8, 0.0, 2.0, True)
+    model_laplaced = LaplacedModel(8, True)
     laplaced_loss_curve = get_learning_curve(model_laplaced, mnist.train, mnist.test, sequential_tasks)
 
-    model_naive = LaplacedModel(8, 0.0, 2.0, False)
+    model_naive = LaplacedModel(8, False)
     naive_loss_curve = get_learning_curve(model_naive, mnist.train, mnist.test, sequential_tasks)
 
-    model_baseline = LaplacedModel(8, 0.0, 2.0, False)
+    model_baseline = LaplacedModel(8, False)
     naive_loss_curve = get_learning_curve(model_baseline, mnist.train, mnist.test, sequential_tasks)
 
