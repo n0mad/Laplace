@@ -65,15 +65,15 @@ class LaplacedModel:
             _, batch_accuracy = session.run([self.train_step, self.accuracy], feed_dict=feed_dict)
             average += batch_accuracy
 
-            if i % 1000 == 0:
-                print average / 500
-                average = 0.0
+            #if i % 1000 == 0:
+            #    print average / 500
+            #    average = 0.0
         self.tasks_learned += 1
         if self.ewc:
             self.update_fisher_diag(session, data)
             self.prev_solution = session.run(self.variables)
-            for i, v in enumerate(self.variables):
-                print v.name, np.linalg.norm(self.fisher_matrixes[i]), np.linalg.norm(self.prev_solution[i])
+            #for i, v in enumerate(self.variables):
+            #    print v.name, np.linalg.norm(self.fisher_matrixes[i]), np.linalg.norm(self.prev_solution[i])
 
         x, y_ = validation_data.images, validation_data.labels
         accuracy = session.run([self.accuracy], feed_dict={self.x: x, self.y_: y_})
