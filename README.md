@@ -16,8 +16,13 @@ Laplace approximation is a useful trick that bridges the loss-function-optimizat
 #References
 
 [Pattern Recognition and Machine Learning, Bishop, C.M.; S4.4](https://www.microsoft.com/en-us/research/people/cmbishop/)
+
 [Comment on "Overcoming catastrophic forgetting in NNs": Are multiple penalties needed? Ferenc Huszár](http://www.inference.vc/comment-on-overcoming-catastrophic-forgetting-in-nns-are-multiple-penalties-needed-2/)
+
 [Overcoming catastrophic forgetting in neural networks, Kirkpatrick et al.](https://arxiv.org/abs/1612.00796)
+
 [An Empirical Evaluation of Thompson Sampling, Chapelle O., Li L.](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/thompson.pdf)
+
 [Information theory, inference and learning algorithms, D. MacKay](www.inference.phy.cam.ac.uk/itila/book.html)
+
 [Thompson Sampling and Bayesian Factorization Machines, Berzan C.](http://tech.adroll.com/blog/data-science/2017/03/06/thompson-sampling-bayesian-factorization-machines.html)
