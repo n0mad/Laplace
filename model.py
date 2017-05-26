@@ -58,15 +58,15 @@ class LaplacedModel:
         average = 0.0
         feed_dict = dict( zip(self.fisher_placeholders, self.fisher_matrixes) + zip(self.prev_solution_placeholders, self.prev_solution) )
 
-        for i in xrange(1, 15000):
+        for i in xrange(1, 5000):
             batch = data.next_batch(self.batch_size)
             feed_dict[self.x] = batch[0]
             feed_dict[self.y_] = batch[1]
             _, batch_accuracy = session.run([self.train_step, self.accuracy], feed_dict=feed_dict)
             average += batch_accuracy
 
-            #if i % 1000 == 0:
-            #    print average / 500
+            #if i % 100 == 0:
+            #    print average / 100
             #    average = 0.0
         self.tasks_learned += 1
         if self.ewc:
@@ -83,11 +83,11 @@ class LaplacedModel:
         # sampling a random class from softmax
         probs = tf.nn.softmax(self.y)
         class_ind = tf.to_int32(tf.multinomial(tf.log(probs), 1)[0][0])
-	for i in range(500):
+	for i in xrange(100):
             im_ind = np.random.randint(dataset.images.shape[0])
             ders = session.run(tf.gradients(tf.log(probs[0,class_ind]), self.variables), feed_dict={self.x: dataset.images[im_ind:im_ind+1]})
             for f, d in zip(self.fisher_matrixes, ders):
-                f += d * d / 500
+                f += d * d / 100
 
 def split_dataset(dataset, parts):
     n = dataset._num_examples
