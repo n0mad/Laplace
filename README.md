@@ -26,3 +26,5 @@ The Laplace approximation is a useful trick that bridges the risk minimization a
 [Information theory, inference and learning algorithms, D. MacKay](www.inference.phy.cam.ac.uk/itila/book.html)
 
 [Thompson Sampling and Bayesian Factorization Machines, Berzan C.](http://tech.adroll.com/blog/data-science/2017/03/06/thompson-sampling-bayesian-factorization-machines.html)
+
+[Revisiting Natural Gradient for Deep Networks](https://arxiv.org/abs/1301.3584)
