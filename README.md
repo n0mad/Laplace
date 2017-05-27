@@ -2,9 +2,9 @@
 
 The Laplace approximation is a useful trick that bridges the risk minimization and Bayesian views of machine learning. It unlocks some possibilities that I personally find interesting, and in this repo I want to go over some of them.
 
-[1 Background](Background.ipynb) Deriving the Laplace approximation from scratch.
+[1 Background](http://nbviewer.jupyter.org/github/n0mad/Laplace/blob/master/Background.ipynb) Deriving the Laplace approximation from scratch.
 
-[2 Sequential Learning](Sequential%20Learning.ipynb) Often, data arrives in batches and we want to update our model incrementally, without re-training on the entire collected dataset - that simply can take too much time. Turns out, we can train pretty complex models incrementally, thanks to the Laplace approximation.
+[2 Sequential Learning](http://nbviewer.jupyter.org/github/n0mad/Laplace/blob/master/Sequential%20Learning.ipynb) Often, data arrives in batches and we want to update our model incrementally, without re-training on the entire collected dataset - that simply can take too much time. Turns out, we can train pretty complex models incrementally, thanks to the Laplace approximation.
 
 [4 Parallel Learning ]() [To be added] Alternatively, sometimes we want to split a large dataset in a set of smaller dataset and learn on them in parallel. How do the merge the solutions of these subproblems? Just average them? Let's try combining them in a smarter way.
 
