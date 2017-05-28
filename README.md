@@ -6,11 +6,11 @@ The Laplace approximation is a useful trick that bridges the risk minimization a
 
 [2 Sequential Learning](http://nbviewer.jupyter.org/github/n0mad/Laplace/blob/master/Sequential%20Learning.ipynb) Often, data arrives in batches and we want to update our model incrementally, without re-training on the entire collected dataset - that simply can take too much time. Turns out, we can train pretty complex models incrementally, thanks to the Laplace approximation.
 
-[4 Parallel Learning ]() [To be added] Alternatively, sometimes we want to split a large dataset in a set of smaller dataset and learn on them in parallel. How do the merge the solutions of these subproblems? Just average them? Let's try combining them in a smarter way.
+[3 Parallel Learning ]() [To be added] Alternatively, sometimes we want to split a large dataset in a set of smaller dataset and learn on them in parallel. How do the merge the solutions of these subproblems? Just average them? Let's try combining them in a smarter way.
 
-[5 Multi-task Learning]() [To be added] In another scenario, we want to sequentially train our model to perform several different tasks. For instance, one day we train it to detect cats in images, the next day we want to train it to detect dogs and - the tricky part - not to forget how to detect cats!
+[4 Multi-task Learning]() [To be added] In another scenario, we want to sequentially train our model to perform several different tasks. For instance, one day we train it to detect cats in images, the next day we want to train it to detect dogs and - the tricky part - not to forget how to detect cats!
 
-[6 Thompson Sampling]() [To be added] Thompson sampling is an elegant explore/exploit strategy that works by sampling from the posterior. The Laplace approximation allows us to approximate the posterior in cases where it's hard to do it other way.
+[5 Thompson Sampling]() [To be added] Thompson sampling is an elegant explore/exploit strategy that works by sampling from the posterior. The Laplace approximation allows us to approximate the posterior in cases where it's hard to do it other way.
 
 
 # References
